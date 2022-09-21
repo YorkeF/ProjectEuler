@@ -58,9 +58,10 @@ public class Problem17 {
         String finalstring;
         int totalnum = 0;
 
-        for (int i = 1; i < 1000; i++) {
+        for (int i = 1; i < 1001; i++) {
             if (i == 1000){
                 part1 = "onethousand";
+                continue;
             } else if (i > 100) {
                 part1 = ones.get(getHundredsPlace(i) - 1);
                 part2 = hundreds.get(0);
@@ -72,8 +73,10 @@ public class Problem17 {
                 } else {
                     part3 = elevens.get(getOnesPlace(i));
                 }
+                continue;
             } else if (i == 100) {
                 part1 = "onehundred";
+                continue;
             } else if (i >= 10) {
                 if(getTensPlace(i) >= 2){
                     part1 = tens.get(getTensPlace(i)-2);
@@ -86,8 +89,10 @@ public class Problem17 {
                 else {
                     part1 = elevens.get(getOnesPlace(i));
                 }
+
             } else {
                 part1 = ones.get(getOnesPlace(i)-1);
+
             }
 
             finalstring = part1 + part2 + part3 + part4;

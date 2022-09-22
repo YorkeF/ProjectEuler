@@ -59,18 +59,30 @@ public class Problem17 {
         int totalnum = 0;
 
         for (int i = 1; i < 1001; i++) {
+            part1 = "";
+            part2 = "";
+            part3 = "";
+            part4 = "";
             if (i == 1000){
                 part1 = "onethousand";
-            } else if (i > 100) {
+            }
+            else if (i > 100) {
                 part1 = ones.get(getHundredsPlace(i) - 1);
-                part2 = hundreds.get(0);
-                if(getTensPlace(i) >= 2){
+                if(i % 100 == 0) {
+                    part2 = "hundred";
+                }
+                else if(getTensPlace(i) >= 2){
+                    part2 = hundreds.get(0);
                     part3 = tens.get(getTensPlace(i)-2);
                     if(getOnesPlace(i) != 0) {
                         part4 = ones.get(getOnesPlace(i)-1);
                     }
-                } else {
+                } else if(getTensPlace(i) >= 1){
+                    part2 = hundreds.get(0);
                     part3 = elevens.get(getOnesPlace(i));
+                } else {
+                    part2 = hundreds.get(0);
+                    part3 = ones.get(getOnesPlace(i) - 1);
                 }
             } else if (i == 100) {
                 part1 = "onehundred";
@@ -96,7 +108,6 @@ public class Problem17 {
             System.out.println(i + ": " + finalstring);
             totalnum += finalstring.length();
         }
-        totalnum += "onethousand".length();
         System.out.print(totalnum);
 
     }

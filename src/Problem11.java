@@ -61,27 +61,38 @@ public class Problem11 {
             for (int j = 0; j < y; j++) {
                 current = 0;
                 if (i < 17) {
-                    System.out.println(count + ": Checking " + map[i][j] + " * " + map[i+1][j] + " * " + map[i+2][j] + " * " + map[i+3][j] + " = " + map[i][j] * map[i+1][j] * map[i+2][j] * map[i+3][j]);
+                    System.out.println(count + ": Index (" + i + "," + j + ") Checking Vertically " + map[i][j] + " * " + map[i+1][j] + " * " + map[i+2][j] + " * " + map[i+3][j] + " = " + map[i][j] * map[i+1][j] * map[i+2][j] * map[i+3][j]);
                     current = map[i][j] * map[i+1][j] * map[i+2][j] * map[i+3][j];
                 }
                 if(current > biggest){
                     biggest = current;
+                    System.out.println("This is the Current largest found!");
                 }
                 //next
                 if (j < 17) {
-                    System.out.println(count+1 + ": Checking " + map[i][j] +" * " + map[i][j+1] + " * " + map[i][j+2] + " * " + map[i][j+3] + " = " + map[i][j] * map[i][j+1] * map[i][j+2] * map[i][j+3]);
+                    System.out.println(count+1 + ": Index (" + i + "," + j + ") Checking Horizontally " + map[i][j] +" * " + map[i][j+1] + " * " + map[i][j+2] + " * " + map[i][j+3] + " = " + map[i][j] * map[i][j+1] * map[i][j+2] * map[i][j+3]);
                     current = map[i][j] * map[i][j+1] * map[i][j+2] * map[i][j+3];
                 }
                 if(current > biggest){
                     biggest = current;
+                    System.out.println("This is the Current largest found!");
                 }
                 //next
                 if (i < 17 && j < 17){
-                    System.out.println(count+2 + ": Checking " + map[i][j] +" * " + map[i+1][j+1] + " * " + map[i+2][j+2] + " * " + map[i+3][j+3] + " = " + map[i][j] * map[i+1][j+1] * map[i+2][j+2] * map[i+3][j+3]);
+                    System.out.println(count+2 + ": Index (" + i + "," + j + ") Checking Diagonally " + map[i][j] +" * " + map[i+1][j+1] + " * " + map[i+2][j+2] + " * " + map[i+3][j+3] + " = " + map[i][j] * map[i+1][j+1] * map[i+2][j+2] * map[i+3][j+3]);
                     current = map[i][j] * map[i+1][j+1] * map[i+2][j+2] * map[i+3][j+3];
                 }
                 if(current > biggest){
                     biggest = current;
+                    System.out.println("This is the Current largest found!");
+                }
+                if (i < 17 && j >= 4){
+                    System.out.println(count+3 + ": Index (" + i + "," + j + ") Checking Diagonally " + map[i][j] +" * " + map[i+1][j-1] + " * " + map[i+2][j-2] + " * " + map[i+3][j-3] + " = " + map[i][j] * map[i+1][j-1] * map[i+2][j-2] * map[i+3][j-3]);
+                    current = map[i][j] * map[i+1][j-1] * map[i+2][j-2] * map[i+3][j-3];
+                }
+                if(current > biggest){
+                    biggest = current;
+                    System.out.println("This is the Current largest found!");
                 }
                 count++;
             }

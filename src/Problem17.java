@@ -11,7 +11,6 @@ The use of "and" when writing out numbers is in compliance with British usage.
 
 
 import java.util.ArrayList;
-
 public class Problem17 {
     public static void main(String[] args) {
         ArrayList<String> ones = new ArrayList<>();
@@ -57,7 +56,6 @@ public class Problem17 {
         String part1 = "", part2 = "", part3 = "", part4 = "";
         String finalstring;
         int totalnum = 0;
-
         for (int i = 1; i < 1001; i++) {
             part1 = "";
             part2 = "";
@@ -98,20 +96,15 @@ public class Problem17 {
                 else {
                     part1 = elevens.get(getOnesPlace(i));
                 }
-
             } else {
                 part1 = ones.get(getOnesPlace(i)-1);
-
             }
-
             finalstring = part1 + part2 + part3 + part4;
             System.out.println(i + ": " + finalstring);
             totalnum += finalstring.length();
         }
         System.out.print(totalnum);
-
     }
-
     public static int getHundredsPlace(int num){
         if (num < 100){
             return 0;
@@ -129,6 +122,4 @@ public class Problem17 {
     public static int getOnesPlace(int num){
             return (num % 10);
     }
-
-
 }
